@@ -17,3 +17,6 @@ The plugin functionality work's as follows;
 - Save new MD5 from the array for reference during the next migration.
 
 I have only tested with pods with fields and groups only and it is working both for adding, and updating.
+
+NOTE: The plugin can not work if wordpress pods is not installed and activated
+      https://wordpress.org/plugins/pods/
