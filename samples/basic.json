@@ -1,0 +1,69 @@
+{
+    "pods": [
+        {
+            "version":"1.0.0",
+            "name": "author",
+            "label": "Authors",
+            "label_singular": "Author",
+            "type": "post_type",
+            "storage": "meta",
+            "public": true,
+            "fields": [
+                {
+                    "name": "books",
+                    "label": "Books",
+                    "type": "pick",
+                    "pick_object": "post_type",
+                    "pick_val": "book",
+                    "pick_format_type": "multi",
+                    "pick_format_multi": "list"
+                }
+            ]
+        },
+        {
+            "version":"1.0.0",
+            "name": "book",
+            "label": "Books",
+            "label_singular": "Book",
+            "type": "post_type",
+            "storage": "table",
+            "public": true,
+            "fields": [
+                {
+                    "name": "isbn",
+                    "label": "ISBN",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "version":"1.0.0",
+            "name": "chapter",
+            "label": "Chapters",
+            "label_singular": "Chapter",
+            "type": "post_type",
+            "storage": "table",
+            "public": true,
+            "fields": [
+                {
+                    "name": "book",
+                    "label": "Book",
+                    "type": "pick",
+                    "pick_object": "post_type",
+                    "pick_val": "book",
+                    "pick_format_type": "single",
+                    "pick_format_single": "list"
+                }
+            ]
+        }
+    ],
+    "templates": [
+        {
+            "name": "Authors",
+            "code": "[if author]\r\n<h5 class=\"accordion-toggle\">{@post_title}<\/h5>\r\n<div class=\"accordion-container\">\r\n<h4>{@post_excerpt} <a href=\"{@permalink,esc_url }\">FAQS ><\/a><\/h4>\r\n<\/div>\r\n[\/if]",
+            "pod_reference": {
+                "pod": ""
+            }
+        }
+    ]
+}

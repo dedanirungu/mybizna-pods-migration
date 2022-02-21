@@ -1,0 +1,43 @@
+---
+meta:
+- version: 2.8.10
+  build: 1645297503
+pods:
+- name: author
+  label: Authors
+  label_singular: Author
+  type: post_type
+  storage: meta
+  public: true
+  fields:
+  - name: books
+    label: Books
+    type: pick
+    pick_object: post_type
+    pick_val: book
+    pick_format_type: multi
+    pick_format_multi: list
+- name: book
+  label: Books
+  label_singular: Book
+  type: post_type
+  storage: table
+  public: true
+  fields:
+  - name: isbn
+    label: ISBN
+    type: text
+- name: chapter
+  label: Chapters
+  label_singular: Chapter
+  type: post_type
+  storage: table
+  public: true
+  fields:
+  - name: book
+    label: Book
+    type: pick
+    pick_object: post_type
+    pick_val: book
+    pick_format_type: single
+    pick_format_single: list

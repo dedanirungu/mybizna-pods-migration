@@ -1,0 +1,37 @@
+{
+    "pods": [
+        {
+            "version": "1.0.0",
+            "alias": "migration",
+            "name": "migration",
+            "label": "Pods Migrations",
+            "label_singular": "Pod Migration",
+            "type": "post_type",
+            "storage": "table",
+            "show_ui": "0",
+            "show_in_menu": "0",
+            "show_in_admin_bar": "0",
+            "show_in_nav_menus": "0",
+            "has_archive": "0",
+            "public": false,
+            "fields": [
+                {
+                    "name": "item_name",
+                    "label": "Name",
+                    "type": "text"
+                },
+                {
+                    "name": "md5str",
+                    "label": "MD5 String",
+                    "type": "text"
+                }
+                ,
+                {
+                    "name": "item_type",
+                    "label": "Type",
+                    "type": "text"
+                }
+            ]
+        }
+    ]
+}
