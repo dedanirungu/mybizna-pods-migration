@@ -2,7 +2,7 @@
 Mybizna Pods Migration
 
 
-This pods migrartion plugin to perform pods migration that are saved as pods.json on themes or plugins.
+This pods migration plugin to perform pods migration that are saved as pods.json on themes or plugins.
 
 I have added new functions to Config.php that has been in development.
 

@@ -6,10 +6,10 @@
  * @package           MybiznaPodMigration
  * @author            Dedan Irungu
  * @copyright         2022 Mybizna.com
- * @license           GPL-2.0-or-later
+ * @license           GPL-3.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       Pods Migration
+ * Plugin Name:       Mybizna Pods Migration
  * Plugin URI:        https://wordpress.org/plugins/mybizna-pod-Migration/
  * Description:       Mybizna Pods Migration.
  * Version:           1.0.0
