@@ -5,7 +5,7 @@
  *
  * @package Pods
  */
-class Config
+class MybiznaPodsMigration
 {
 
     /**
