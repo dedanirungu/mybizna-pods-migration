@@ -1,0 +1,109 @@
+{
+    "meta": {
+        "version": "2.8.10",
+        "build": 1646389095
+    },
+    "pods": [
+        {
+            "name": "tabletester",
+            "id": 109,
+            "label": "tabletesters",
+            "description": "",
+            "type": "pod",
+            "storage": "table",
+            "label_singular": "tabletester",
+            "public": "1",
+            "show_ui": "1",
+            "pod_index": "name",
+            "_migrated_28": "1",
+            "show_in_menu": "1",
+            "ui_style": "post_type",
+            "ui_actions_enabled": [
+                "add",
+                "edit",
+                "duplicate",
+                "delete",
+                "reorder",
+                "export"
+            ],
+            "ui_fields_manage": [
+                "name",
+                "created",
+                "author",
+                "permalink",
+                "id"
+            ],
+            "ui_filters": [
+                "name",
+                "author",
+                "permalink",
+                "created",
+                "modified"
+            ],
+            "menu_position": "5",
+            "menu_icon": "dashicons-star-empty",
+            "groups": [
+                {
+                    "name": "details",
+                    "id": 110,
+                    "label": "Details",
+                    "description": "",
+                    "weight": 0,
+                    "fields": [
+                        {
+                            "name": "name",
+                            "id": 111,
+                            "label": "Name",
+                            "description": "",
+                            "weight": 0,
+                            "type": "text",
+                            "required": "1"
+                        },
+                        {
+                            "name": "created",
+                            "id": 112,
+                            "label": "Date Created",
+                            "description": "",
+                            "weight": 1,
+                            "type": "datetime",
+                            "datetime_format": "ymd_slash",
+                            "datetime_time_type": "12",
+                            "datetime_time_format": "h_mm_ss_A"
+                        },
+                        {
+                            "name": "modified",
+                            "id": 113,
+                            "label": "Date Modified",
+                            "description": "",
+                            "weight": 2,
+                            "type": "datetime",
+                            "datetime_format": "ymd_slash",
+                            "datetime_time_type": "12",
+                            "datetime_time_format": "h_mm_ss_A"
+                        },
+                        {
+                            "name": "author",
+                            "id": 114,
+                            "label": "Author",
+                            "description": "",
+                            "weight": 3,
+                            "type": "pick",
+                            "pick_object": "user",
+                            "pick_format_type": "single",
+                            "pick_format_single": "autocomplete",
+                            "default_value": "{@user.ID}"
+                        },
+                        {
+                            "name": "permalink",
+                            "id": 115,
+                            "label": "Permalink",
+                            "description": "Leave blank to auto-generate from Name",
+                            "weight": 4,
+                            "type": "slug"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

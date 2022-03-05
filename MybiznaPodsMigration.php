@@ -124,6 +124,7 @@ class MybiznaPodsMigration
      */
     public function setup()
     {
+
         // Register theme.
         $this->register_path(get_template_directory());
 
@@ -313,6 +314,7 @@ class MybiznaPodsMigration
             trailingslashit(get_template_directory()),
             trailingslashit(get_stylesheet_directory()),
         ];
+
 
         foreach ($this->registered_paths as $config_path) {
             foreach ($file_configs as $file_config) {
@@ -701,13 +703,16 @@ class MybiznaPodsMigration
 
                 foreach ($pod_type as $pod_data) {
 
+                    $pod_name = $pod_data['name'];
+                    $pod_type = $pod_data['type'];
+
                     $md5str = md5(json_encode($pod_data));
 
-                    $qry = "item_name=\"" . $pod_data['name'] . '"';
+                    $qry = "item_name=\"" . $pod_name . '"';
 
                     $myrows = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}pods_migration WHERE " . $qry);
 
-                    if ($myrows->md5str != $md5str) {
+                    if (!is_object($myrows) || $myrows->md5str != $md5str) {
 
                         $this->save_pod($pod_data);
 
@@ -715,8 +720,8 @@ class MybiznaPodsMigration
 
                         $data = array(
                             'md5str' => $md5str,
-                            'item_name' => $pod_data['name'],
-                            'item_type' => $pod_data['type'],
+                            'item_name' => $pod_name,
+                            'item_type' => $pod_type,
                         );
 
                         if ($pods->exists()) {
@@ -740,7 +745,7 @@ class MybiznaPodsMigration
         $pods_api = new PodsAPI();
 
         $pod = $pods_api->load_pod($pod_data['name']);
-
+        
         if ($pod) {
 
             $pod_data['id'] = $pod->id;
@@ -754,6 +759,7 @@ class MybiznaPodsMigration
             $pod_id = $pods_api->save_pod($cp_pod_data);
         } else {
             $pod_data = $this->pod_reshaping($pod_data);
+            
             $pod_id = $pods_api->add_pod($pod_data);
 
         }
@@ -815,7 +821,7 @@ class MybiznaPodsMigration
     }
 
     protected function save_field($field, $pod_id, $group_id = '')
-    { 
+    {
 
         $pods_api = new PodsAPI();
 
@@ -853,7 +859,7 @@ class MybiznaPodsMigration
     {
         $pods_api = new PodsAPI();
 
-        $action_type = (!$action_name) ? 'create' : 'extend';
+        $action_type = $action_name;
 
         $type = (isset($pod_data['type'])) ? $pod_data['type'] : 'post_type';
         $name = (isset($pod_data['name'])) ? $pod_data['name'] : '';

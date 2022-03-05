@@ -10,9 +10,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Mybizna Pods Migration
- * Plugin URI:        https://wordpress.org/plugins/mybizna-pod-Migration/
- * Description:       Mybizna Pods Migration.
- * Version:           1.0.0
+ * Plugin URI:        https://wordpress.org/plugins/mybizna-pods-migration/
+ * Description:       This pods migration plugin to perform pods migration that are saved as pods.json on themes or plugins.
+ * Version:           1.0.2
  * Requires at least: 5.4
  * Requires PHP:      7.2
  * Author:            Dedan Irungu
@@ -24,10 +24,13 @@
 
 require_once 'MybiznaPodsMigration.php';
 
+require_once ABSPATH . 'wp-admin/includes/file.php';
+
 function mybizna_pods_migration()
 {
-
-    if (is_admin() && isset($_GET['pods-migration'])) {
+    if (isset($_GET['pods-migration'])) {
+        
+        WP_Filesystem();
 
         $mybizna_pods_migration = new MybiznaPodsMigration();
 
@@ -74,6 +77,8 @@ function mybizna_pods_migration_activate()
         deactivate_plugins(plugin_basename(__FILE__));
         wp_die(__('Please install and Activate Wordpress Pods.', 'https://wordpress.org/plugins/pods/'), 'Plugin dependency check', array('back_link' => true));
     } else {
+
+        WP_Filesystem();
 
         $mybizna_pods_migration = new MybiznaPodsMigration();
 

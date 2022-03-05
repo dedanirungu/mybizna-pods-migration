@@ -1,7 +1,6 @@
 {
     "pods": [
         {
-            "version":"1.0.0",
             "name": "faq",
             "label": "FAQs",
             "description": "",
@@ -192,7 +191,6 @@
             ]
         },
         {
-            "version":"1.0.0",
             "name": "form",
             "label": "Forms",
             "description": "",
@@ -384,7 +382,6 @@
             ]
         },
         {
-            "version":"1.0.0",
             "name": "guidance_document",
             "label": "Guidance Documents",
             "description": "",
@@ -632,7 +629,6 @@
             ]
         },
         {
-            "version":"1.0.0",
             "name": "policy",
             "label": "Policies",
             "description": "",
@@ -724,7 +720,7 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "unique": "0",
-                            "text_repeatable": "0",
+                            "text_repeatable": "0"
                         },
                         {
                             "name": "version_number",
@@ -787,7 +783,7 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "unique": "0",
-                            "date_repeatable": "0",
+                            "date_repeatable": "0"
                         },
                         {
                             "name": "objective",
@@ -1113,7 +1109,6 @@
             ]
         },
         {
-            "version":"1.0.0",
             "name": "procedure",
             "label": "Procedures",
             "description": "",
